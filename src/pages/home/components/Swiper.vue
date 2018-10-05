@@ -1,7 +1,8 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption">
-      <swiper-slide v-for="item of swiperList" :key="item.id">
+    <!-- list.length用于初始化时候防止空数组初始化，导致页面异常 -->
+    <swiper :options="swiperOption" v-if="list.length">
+      <swiper-slide v-for="item of list" :key="item.id">
         <img :src="item.imgUrl" class="swiper-img">
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -12,6 +13,9 @@
 <script>
 export default {
   name: 'HomeSwiper',
+  props: {
+    list: Array
+  },
   data () {
     return {
       swiperOption: {
@@ -38,7 +42,7 @@ export default {
   overflow hidden
   height 0
   width 100%
-  padding-bottom 37.06%
+  padding-bottom 31.25%
   background #eee
   // 深度作用选择器
   >>> .swiper-pagination-bullet-active

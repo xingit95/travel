@@ -3,7 +3,7 @@
     <div class="title">周末去哪玩</div>
     <ul>
       <li
-        v-for="oneRecommend of recommendList"
+        v-for="oneRecommend of list"
         :key="oneRecommend.id"
       >
         <div class="item-img-wrapper">
@@ -24,6 +24,9 @@
 <script>
 export default {
   name: 'HomeWeekend',
+  props: {
+    list: Array
+  },
   data () {
     return {
       recommendList: [{
@@ -50,7 +53,7 @@ export default {
 <style lang="stylus" scoped>
 @import '~styles/mixins.styl'
   .title
-    margin-top .2rem
+    // margin-top .2rem
     line-height .8rem
     background-color #eee
     text-indent .2rem

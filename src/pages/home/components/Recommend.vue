@@ -4,7 +4,7 @@
     <ul>
       <li
         class="item"
-        v-for="oneRecommend of recommendList"
+        v-for="oneRecommend of list"
         :key="oneRecommend.id"
       >
         <img
@@ -24,6 +24,9 @@
 <script>
 export default {
   name: 'HomeRecommend',
+  props: {
+    list: Array
+  },
   data () {
     return {
       recommendList: [{
