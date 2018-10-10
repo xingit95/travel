@@ -41,8 +41,7 @@ export default {
     getHomeInfo () {
       // 使用了webpack的proxyTable设置代理，设置文件在config/index.js的proxyTable
       // /api 设置为 http://localhost:8080/static/mock/
-      axios.get('/api/index.json?city=' + this.city)
-        .then(this.getHomeInfoSucc)
+      axios.get('/api/index.json?city=' + this.city).then(this.getHomeInfoSucc)
     },
     getHomeInfoSucc (res) {
       console.log(res)
@@ -72,5 +71,4 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-
 </style>
